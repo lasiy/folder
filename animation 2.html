@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sun Animation</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+        
+        }
+        .sky {
+            background-color: #87CEFA;
+            height: 100%;
+            position: relative;
+
+        }
+        .sun {
+            background-color: #FFD700;
+            border-radius: 50%;
+            height: 100px;
+            width: 100px;
+            position: absolute;
+            bottom: -50px;
+            left: 50%;
+           
+        }
+        .smoke{ height: 500px;
+            width: 500px;
+            position: sticky;
+            top: 50px;
+            right: 60%;
+        }
+        img{
+            opacity: 0.4;
+            position: sticky;
+        }
+        .backcloud{
+      
+        height: 100px;
+        
+        width: 1200px;
+      
+
+        }
+    </style>
+</head>
+<body >
+    
+   
+    <div class="sky">
+       
+      <div class="backcloud">
+      <center>  <img src="/images/smoke.jpg" alt=""></center>
+      </div>
+        <div class="sun" id="sun"></div>
+    </div>
+    <script>
+        const sun = document.getElementById('sun');
+        let height = 100;
+        let direction = 1;
+
+        function moveSun() {
+            if (height > 900) {
+                direction = -1;
+            } else if (height < 100) {
+                direction = 1;
+            }
+            height += direction;
+            let a =height - 50
+            sun.style.bottom = a+ "px";
+        }
+
+        setInterval(moveSun, 16); 
+    </script>
+</body>
+</html>
